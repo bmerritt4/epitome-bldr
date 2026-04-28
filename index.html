@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epitome Med Spa — Homepage Mockup | BLDR Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sage: #4a5e4a;
+    --sage-light: #6b7f6b;
+    --sage-dark: #2e3a2e;
+    --gold: #c9a96e;
+    --gold-light: #e0c898;
+    --cream: #f7f3ec;
+    --cream-dark: #ede7db;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-mid: #4a4a4a;
+    --text-light: #7a7a7a;
+  }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); }
+
+  /* TOP BAR */
+  .topbar { background: var(--sage-dark); padding: 8px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.12em; color: var(--gold-light); font-weight: 300; }
+  .topbar a { color: var(--gold-light); text-decoration: none; }
+  .topbar-social { display: flex; gap: 14px; }
+
+  /* NAV */
+  .nav { background: var(--white); padding: 0 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--cream-dark); position: sticky; top: 0; z-index: 100; height: 72px; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--sage-dark); letter-spacing: 0.04em; display: flex; align-items: center; gap: 0; }
+  .nav-logo .gold { color: var(--gold); }
+  .nav-logo .italic { font-style: italic; margin-left: 8px; font-size: 20px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 11px; letter-spacing: 0.14em; font-weight: 500; color: var(--sage-dark); text-transform: uppercase; padding-bottom: 4px; border-bottom: 1.5px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  .nav-links a:hover { border-bottom-color: var(--gold); }
+  .nav-cta { background: var(--sage) !important; color: var(--white) !important; padding: 9px 22px !important; border-bottom: none !important; border-radius: 0 !important; font-size: 10px !important; }
+  .nav-cta:hover { background: var(--sage-dark) !important; }
+
+  /* HERO */
+  .hero { position: relative; height: 580px; background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%); display: flex; align-items: center; overflow: hidden; }
+  .hero-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%); background-size: 12px 12px; }
+  .hero-accent { position: absolute; right: 0; top: 0; width: 44%; height: 100%; background: rgba(201,169,110,0.07); clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%); }
+  .hero-img-hint { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); width: 320px; height: 420px; border: 1.5px solid rgba(201,169,110,0.3); display: flex; align-items: center; justify-content: center; }
+  .hero-img-hint span { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
+  .hero-content { position: relative; z-index: 2; padding: 0 72px; max-width: 600px; }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; font-weight: 400; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 60px; line-height: 1.06; font-weight: 300; color: var(--white); margin-bottom: 22px; }
+  .hero-title em { color: var(--gold-light); font-style: italic; }
+  .hero-sub { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.03em; margin-bottom: 38px; line-height: 1.75; font-weight: 300; max-width: 440px; }
+  .hero-btns { display: flex; gap: 16px; align-items: center; }
+  .btn-primary { background: var(--gold); color: var(--sage-dark); padding: 14px 34px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-family: 'Jost', sans-serif; font-weight: 500; cursor: pointer; border: none; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost { color: rgba(255,255,255,0.65); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-family: 'Jost', sans-serif; font-weight: 400; cursor: pointer; background: none; border: none; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.3); transition: color 0.2s, border-color 0.2s; }
+  .btn-ghost:hover { color: var(--white); border-bottom-color: var(--white); }
+
+  /* TRUST BAR */
+  .trust-bar { background: var(--gold); display: flex; justify-content: center; gap: 0; padding: 0; }
+  .trust-item { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: var(--sage-dark); padding: 18px 12px; border-right: 1px solid rgba(46,58,46,0.15); }
+  .trust-item:last-child { border-right: none; }
+  .trust-icon { font-size: 13px; }
+
+  /* SECTION */
+  .section { padding: 80px 48px; }
+  .section-header { text-align: center; margin-bottom: 52px; }
+  .section-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 12px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--sage-dark); line-height: 1.15; }
+  .section-rule { width: 48px; height: 1px; background: var(--gold); margin: 18px auto 0; }
+
+  /* SERVICES */
+  .services-bg { background: var(--cream); }
+  .services-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--cream-dark); margin-bottom: 40px; }
+  .service-card { background: var(--white); padding: 30px 14px 26px; text-align: center; cursor: pointer; transition: background 0.25s; }
+  .service-card:hover { background: var(--sage-dark); }
+  .service-card:hover .service-name { color: var(--white); }
+  .service-card:hover .service-desc { color: rgba(255,255,255,0.5); }
+  .service-card:hover .svc-icon-wrap { border-color: var(--gold); background: rgba(201,169,110,0.15); }
+  .svc-icon-wrap { width: 68px; height: 68px; border-radius: 50%; background: var(--cream); border: 1.5px solid var(--cream-dark); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: border-color 0.25s, background 0.25s; }
+  .service-name { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: var(--sage-dark); margin-bottom: 7px; transition: color 0.25s; line-height: 1.4; }
+  .service-desc { font-size: 10px; color: var(--text-light); line-height: 1.5; transition: color 0.25s; }
+  .services-more { text-align: center; }
+
+  /* ABOUT */
+  .about-bg { background: var(--white); }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1000px; margin: 0 auto; }
+  .about-img-wrap { position: relative; }
+  .about-img-box { width: 100%; padding-top: 115%; background: linear-gradient(160deg, var(--sage) 0%, var(--sage-dark) 100%); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .about-img-placeholder { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: rgba(255,255,255,0.25); letter-spacing: 0.06em; position: absolute; }
+  .about-frame { position: absolute; bottom: -22px; right: -22px; width: 58%; height: 58%; border: 1.5px solid var(--gold); pointer-events: none; }
+  .about-badge { position: absolute; top: 28px; right: -28px; background: var(--gold); color: var(--sage-dark); padding: 18px 22px; text-align: center; z-index: 2; }
+  .badge-num { font-size: 30px; font-weight: 500; line-height: 1; display: block; font-family: 'Cormorant Garamond', serif; }
+  .badge-text { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px; display: block; line-height: 1.4; }
+  .about-text .eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 14px; }
+  .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--sage-dark); line-height: 1.12; margin-bottom: 22px; }
+  .about-text p { font-size: 13px; color: var(--text-mid); line-height: 1.85; margin-bottom: 16px; font-weight: 300; }
+  .credentials { display: flex; flex-direction: column; gap: 10px; margin: 26px 0 34px; }
+  .cred { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--text-mid); letter-spacing: 0.03em; }
+  .cred-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+  .btn-sage { background: var(--sage); color: var(--white); padding: 13px 30px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 500; transition: background 0.2s; }
+  .btn-sage:hover { background: var(--sage-dark); }
+
+  /* REVIEWS */
+  .reviews-bg { background: var(--cream-dark); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+  .review-card { background: var(--white); padding: 32px 28px; border-top: 2px solid var(--gold); }
+  .review-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 16px; }
+  .review-text { font-size: 13px; color: var(--text-mid); line-height: 1.8; font-style: italic; font-family: 'Cormorant Garamond', serif; font-weight: 400; margin-bottom: 18px; }
+  .review-author { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); font-weight: 500; }
+
+  /* HOURS */
+  .hours-bg { background: var(--sage-dark); padding: 64px 48px; }
+  .hours-inner { display: flex; justify-content: space-between; align-items: center; max-width: 960px; margin: 0 auto; flex-wrap: wrap; gap: 32px; }
+  .hours-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--white); margin-bottom: 10px; }
+  .hours-left p { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; line-height: 1.7; }
+  .hours-grid { display: flex; gap: 40px; }
+  .hours-item { text-align: center; }
+  .hours-day { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 400; }
+  .hours-time { font-size: 16px; color: var(--white); font-weight: 300; font-family: 'Cormorant Garamond', serif; }
+  .hours-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.1); align-self: center; }
+  .btn-gold { background: var(--gold); color: var(--sage-dark); padding: 14px 30px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 500; transition: background 0.2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  /* FOOTER */
+  .footer { background: #1a231a; border-top: 1px solid rgba(255,255,255,0.05); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); font-weight: 300; letter-spacing: 0.04em; }
+  .footer-logo .gold { color: var(--gold); }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 0.07em; }
+
+  /* CHATBOT */
+  .chat-launcher { position: fixed; bottom: 28px; right: 28px; z-index: 999; }
+  .chat-toggle { width: 54px; height: 54px; background: var(--sage); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(46,58,46,0.35); transition: background 0.2s, transform 0.15s; position: relative; }
+  .chat-toggle:hover { background: var(--sage-dark); transform: scale(1.06); }
+  .chat-toggle svg { width: 22px; height: 22px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .chat-badge { position: absolute; top: -1px; right: -1px; width: 14px; height: 14px; background: var(--gold); border-radius: 50%; border: 2px solid white; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+  .chat-window { position: absolute; bottom: 66px; right: 0; width: 330px; background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.14); display: none; flex-direction: column; max-height: 480px; border: 1px solid var(--cream-dark); }
+  .chat-window.open { display: flex; }
+  .chat-header { background: var(--sage-dark); padding: 16px 18px; display: flex; align-items: center; gap: 12px; }
+  .chat-avatar { width: 38px; height: 38px; background: var(--sage); border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--gold-light); font-style: italic; flex-shrink: 0; }
+  .chat-info h4 { font-size: 13px; color: var(--white); font-weight: 400; letter-spacing: 0.04em; }
+  .chat-status { display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+  .status-dot { width: 6px; height: 6px; background: #6fcf97; border-radius: 50%; }
+  .chat-status p { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; }
+  .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: var(--cream); }
+  .msg { max-width: 84%; }
+  .msg.bot { align-self: flex-start; }
+  .msg.user { align-self: flex-end; }
+  .msg-label { font-size: 9px; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 4px; text-transform: uppercase; }
+  .msg-bubble { padding: 11px 15px; border-radius: 12px; font-size: 12.5px; line-height: 1.55; }
+  .msg.bot .msg-bubble { background: var(--white); color: var(--text-dark); border: 0.5px solid var(--cream-dark); border-bottom-left-radius: 3px; }
+  .msg.user .msg-bubble { background: var(--sage); color: var(--white); border-bottom-right-radius: 3px; }
+  .typing { display: flex; gap: 4px; align-items: center; padding: 10px 14px; }
+  .typing span { width: 6px; height: 6px; background: var(--text-light); border-radius: 50%; animation: bounce 1.2s infinite; }
+  .typing span:nth-child(2) { animation-delay: 0.2s; }
+  .typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-5px)} }
+  .chat-chips { padding: 8px 14px 4px; display: flex; flex-wrap: wrap; gap: 6px; background: var(--cream); }
+  .chip { background: var(--white); border: 0.5px solid var(--cream-dark); color: var(--sage); font-size: 10px; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 20px; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 400; transition: background 0.15s, color 0.15s, border-color 0.15s; white-space: nowrap; }
+  .chip:hover { background: var(--sage); color: var(--white); border-color: var(--sage); }
+  .chat-input-row { padding: 12px 14px; display: flex; gap: 8px; border-top: 1px solid var(--cream-dark); background: var(--white); align-items: center; }
+  .chat-input { flex: 1; border: 1px solid var(--cream-dark); border-radius: 20px; padding: 9px 15px; font-size: 12px; font-family: 'Jost', sans-serif; outline: none; background: var(--cream); color: var(--text-dark); transition: border-color 0.2s; }
+  .chat-input:focus { border-color: var(--sage-light); }
+  .send-btn { width: 36px; height: 36px; background: var(--sage); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s; }
+  .send-btn:hover { background: var(--sage-dark); }
+  .send-btn svg { width: 14px; height: 14px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* BLDR watermark */
+  .bldr-bar { background: var(--sage-dark); text-align: center; padding: 10px; font-size: 10px; letter-spacing: 0.14em; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+  .bldr-bar span { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="bldr-bar">Mockup prepared by <span>BLDR Digital</span> — bldrdigital.com — Not for distribution</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>Contact Us: <a href="#">contact@epitomemedspa.com</a> &nbsp;|&nbsp; Call: <a href="#">(818) 963-8683</a></div>
+  <div class="topbar-social">
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    E<span class="gold">·</span>pit<span class="gold">·</span>o<span class="gold">·</span>me
+    <span class="italic">Med Spa</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Laser Hair Removal</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- VIDEO HERO -->
+<section style="position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#2e3a2e;">
+  <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;">
+    <source src="https://videos.pexels.com/video-files/3997798/3997798-hd_1920_1080_25fps.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(30,46,30,0.72) 0%,rgba(30,46,30,0.35) 60%,rgba(30,46,30,0.15) 100%);"></div>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;padding:0 72px;">
+    <div style="max-width:580px;">
+      <div style="font-size:10px;letter-spacing:0.22em;color:#c9a96e;text-transform:uppercase;margin-bottom:20px;font-weight:400;font-family:Jost,sans-serif;">Woodland Hills, CA &nbsp;&middot;&nbsp; Est. 2017</div>
+      <h1 style="font-family:Cormorant Garamond,serif;font-size:72px;line-height:1.05;font-weight:300;color:#ffffff;margin-bottom:22px;">You owe yourself<br><em style="color:#e0c898;font-style:italic;">this moment.</em></h1>
+      <p style="font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:40px;line-height:1.75;font-weight:300;font-family:Jost,sans-serif;max-width:460px;">Luxury medical aesthetics with the precision and care of a dedicated practitioner &mdash; Botox, fillers, Morpheus8, CoolSculpting, laser hair removal, and more.</p>
+      <div style="display:flex;gap:16px;align-items:center;">
+        <button class="btn-primary">Book an Appointment</button>
+        <button class="btn-ghost">View Our Services</button>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.45;">
+    <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#ffffff;font-family:Jost,sans-serif;">Scroll</div>
+    <div style="width:1px;height:36px;background:#c9a96e;"></div>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-img-hint">
+    <span>Client photography here</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Woodland Hills, CA &nbsp;·&nbsp; Est. 2017</div>
+    <h1 class="hero-title">You owe yourself<br><em>this moment.</em></h1>
+    <p class="hero-sub">Luxury medical aesthetics with the precision and care of a dedicated practitioner — Botox, fillers, Morpheus8, CoolSculpting, laser hair removal, and more.</p>
+    <div class="hero-btns">
+      <button class="btn-primary">Book an Appointment</button>
+      <button class="btn-ghost">View Our Services</button>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">★</span> 4.9 Stars Across All Platforms</div>
+  <div class="trust-item"><span class="trust-icon">◆</span> 8+ Years Serving the Valley</div>
+  <div class="trust-item"><span class="trust-icon">✦</span> 145+ Verified Yelp Reviews</div>
+  <div class="trust-item"><span class="trust-icon">◈</span> Candela Gold Standard Lasers</div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-bg">
+  <div class="section-header">
+    <div class="section-eyebrow">What We Offer</div>
+    <h2 class="section-title">Our Services</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="svc-icon-wrap">❄</div>
+      <div class="service-name">CoolSculpting</div>
+      <div class="service-desc">Non-surgical fat reduction</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">◉</div>
+      <div class="service-name">CoolTone</div>
+      <div class="service-desc">Tone & firm muscles</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">✦</div>
+      <div class="service-name">Morpheus8</div>
+      <div class="service-desc">RF microneedling lift</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">◈</div>
+      <div class="service-name">Botox</div>
+      <div class="service-desc">Precision injectables</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">◆</div>
+      <div class="service-name">Fillers</div>
+      <div class="service-desc">Volume & contouring</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">☀</div>
+      <div class="service-name">Laser Hair Removal</div>
+      <div class="service-desc">Candela Gold Standard</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">✿</div>
+      <div class="service-name">HydraFacial</div>
+      <div class="service-desc">Cleanse & hydrate</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--cream-dark);margin-bottom:40px;">
+    <div class="service-card">
+      <div class="svc-icon-wrap">◎</div>
+      <div class="service-name">Lumecca</div>
+      <div class="service-desc">IPL skin brightening</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">〜</div>
+      <div class="service-name">Forma</div>
+      <div class="service-desc">Skin remodeling</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">○</div>
+      <div class="service-name">Kybella</div>
+      <div class="service-desc">Chin fat reduction</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">⬡</div>
+      <div class="service-name">Microneedling</div>
+      <div class="service-desc">Skin rejuvenation</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">◬</div>
+      <div class="service-name">Vi Chemical Peel</div>
+      <div class="service-desc">Anti-aging & acne</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">◭</div>
+      <div class="service-name">THERMIsmooth</div>
+      <div class="service-desc">Sagging & cellulite</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon-wrap">✾</div>
+      <div class="service-name">PRP</div>
+      <div class="service-desc">Hair restoration</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT MARY -->
+<section class="section about-bg">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <div class="about-img-box">
+        <div class="about-img-placeholder">Photo of Mary</div>
+      </div>
+      <div class="about-frame"></div>
+      <div class="about-badge">
+        <span class="badge-num">8+</span>
+        <span class="badge-text">Years of<br>Excellence</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="eyebrow">Meet Your Practitioner</div>
+      <h2>Mary Rownaghi,<br>RN, MSN, FNP-C</h2>
+      <p>Mary is a board-certified Family Nurse Practitioner with a master's degree in nursing and a singular focus on results that look natural — never overdone.</p>
+      <p>She listens before she treats. Every consultation is personal. Every treatment is tailored. Her patients return for years, and they send their friends.</p>
+      <div class="credentials">
+        <div class="cred"><div class="cred-dot"></div>RN, MSN — Family Nurse Practitioner-Certified</div>
+        <div class="cred"><div class="cred-dot"></div>Certified InMode Morpheus8 Provider</div>
+        <div class="cred"><div class="cred-dot"></div>Candela-Certified Laser Specialist</div>
+        <div class="cred"><div class="cred-dot"></div>Top 3 Med Spa — Woodland Hills on Yelp</div>
+      </div>
+      <button class="btn-sage">Book a Consultation with Mary</button>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-bg">
+  <div class="section-header">
+    <div class="section-eyebrow">Patient Stories</div>
+    <h2 class="section-title">What Our Patients Say</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I now have my go-to med spa for all my beauty needs. I wish I had found Mary and Epitome Med Spa sooner."</p>
+      <div class="review-author">— Verified Yelp Patient</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Mary is amazing! She made me feel so comfortable and listened to everything I was hoping to achieve. She took care of me perfectly."</p>
+      <div class="review-author">— Google Review, Feb 2025</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Amazing results in a warm and friendly, upscale setting. Epitome welcomes you like a premier client into a beautifully designed environment."</p>
+      <div class="review-author">— Google Review, Oct 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<div class="hours-bg">
+  <div class="hours-inner">
+    <div class="hours-left">
+      <h2>Visit Us</h2>
+      <p>22150 Ventura Blvd, Suite 200<br>Woodland Hills, CA 91364</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-item">
+        <div class="hours-day">Mon – Fri</div>
+        <div class="hours-time">9 AM – 6 PM</div>
+      </div>
+      <div class="hours-divider"></div>
+      <div class="hours-item">
+        <div class="hours-day">Saturday</div>
+        <div class="hours-time">9 AM – 4 PM</div>
+      </div>
+      <div class="hours-divider"></div>
+      <div class="hours-item">
+        <div class="hours-day">Sunday</div>
+        <div class="hours-time">Closed</div>
+      </div>
+    </div>
+    <button class="btn-gold">Book an Appointment</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">E<span class="gold">·</span>pit<span class="gold">·</span>o<span class="gold">·</span>me</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Epitome Med Spa · All Rights Reserved</div>
+</footer>
+
+<!-- CHATBOT -->
+<div class="chat-launcher">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-avatar">E</div>
+      <div class="chat-info">
+        <h4>Epitome Assistant</h4>
+        <div class="chat-status"><div class="status-dot"></div><p>Available now</p></div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">
+        <div class="msg-label">Epitome Assistant</div>
+        <div class="msg-bubble">Hi! Welcome to Epitome Med Spa. I can help with questions about our services, pricing, or scheduling a consultation with Mary. What can I help you with?</div>
+      </div>
+    </div>
+    <div class="chat-chips" id="chipTray">
+      <button class="chip" onclick="quickReply('What services do you offer?')">Services</button>
+      <button class="chip" onclick="quickReply('How do I book an appointment?')">Book Now</button>
+      <button class="chip" onclick="quickReply('Tell me about Morpheus8')">Morpheus8</button>
+      <button class="chip" onclick="quickReply('What are your hours?')">Hours</button>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask anything..." onkeydown="if(event.key==='Enter')sendMsg()" />
+      <button class="send-btn" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-toggle" onclick="toggleChat()">
+    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <div class="chat-badge" id="chatBadge"></div>
+  </button>
+</div>
+
+<script>
+  var replies = {
+    services: 'We offer 14 medical aesthetic treatments: Botox, fillers, Morpheus8, CoolSculpting, CoolTone, Lumecca, Forma, laser hair removal, HydraFacial, microneedling, Kybella, PRP, Vi Chemical Peel, and THERMIsmooth. Want details on any specific treatment?',
+    book: "We'd love to see you! Call us at (818) 963-8683 or email contact@epitomemedspa.com. We're open Mon–Fri 9am–6pm and Sat 9am–4pm. Would you like Mary to reach out to you directly?",
+    morpheus8: 'Morpheus8 is a radiofrequency microneedling treatment that tightens skin, reduces fine lines, and remodels facial contours — with minimal downtime. Mary is a certified InMode Morpheus8 provider. Want to schedule a consultation?',
+    hours: "We're open Monday–Friday 9 AM to 6 PM, and Saturday 9 AM to 4 PM. Closed Sundays. We're located at 22150 Ventura Blvd, Suite 200, Woodland Hills.",
+    price: "Pricing is customized at your consultation — Mary tailors every treatment to the individual. She'll only recommend what you actually need. Would you like to book a complimentary consultation?",
+    laser: "We use Candela laser machines — the Gold Standard for laser hair removal across all skin types. Results are long-lasting and the treatment is quick. Want to learn about pricing or book a consultation?",
+    default: "Great question! For the most accurate answer, reach us at (818) 963-8683 or contact@epitomemedspa.com. You can also book a consultation and Mary will walk you through everything personally."
+  };
+
+  function getReply(msg) {
+    var m = msg.toLowerCase();
+    if (m.includes('service') || m.includes('offer') || m.includes('treatment') || m.includes('do you do')) return replies.services;
+    if (m.includes('book') || m.includes('appoint') || m.includes('schedul') || m.includes('consult')) return replies.book;
+    if (m.includes('morpheus')) return replies.morpheus8;
+    if (m.includes('hour') || m.includes('open') || m.includes('close') || m.includes('location') || m.includes('address') || m.includes('where')) return replies.hours;
+    if (m.includes('price') || m.includes('cost') || m.includes('how much') || m.includes('pricing')) return replies.price;
+    if (m.includes('laser') || m.includes('hair removal')) return replies.laser;
+    return replies.default;
+  }
+
+  function addMsg(text, type) {
+    var msgs = document.getElementById('chatMessages');
+    var div = document.createElement('div');
+    div.className = 'msg ' + type;
+    var label = type === 'bot' ? '<div class="msg-label">Epitome Assistant</div>' : '';
+    div.innerHTML = label + '<div class="msg-bubble">' + text + '</div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    var msgs = document.getElementById('chatMessages');
+    var div = document.createElement('div');
+    div.className = 'msg bot';
+    div.id = 'typing';
+    div.innerHTML = '<div class="msg-bubble typing"><span></span><span></span><span></span></div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function removeTyping() {
+    var t = document.getElementById('typing');
+    if (t) t.remove();
+  }
+
+  function sendMsg() {
+    var inp = document.getElementById('chatInput');
+    var text = inp.value.trim();
+    if (!text) return;
+    addMsg(text, 'user');
+    inp.value = '';
+    document.getElementById('chipTray').style.display = 'none';
+    showTyping();
+    setTimeout(function() {
+      removeTyping();
+      addMsg(getReply(text), 'bot');
+    }, 800);
+  }
+
+  function quickReply(text) {
+    document.getElementById('chatInput').value = text;
+    sendMsg();
+  }
+
+  function toggleChat() {
+    var w = document.getElementById('chatWindow');
+    w.classList.toggle('open');
+    document.getElementById('chatBadge').style.display = 'none';
+  }
+</script>
+</body>
+</html>
